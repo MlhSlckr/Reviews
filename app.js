@@ -1,4 +1,5 @@
-// local reviews data
+// Reviews verileri
+
 const reviews = [
   {
     id: 1,
@@ -37,7 +38,7 @@ const reviews = [
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
-// select items
+
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
@@ -50,9 +51,8 @@ const randomBtn = document.querySelector(".random-btn");
 let currentItem = 0;
 let prevPerson;
 
-/*
-
 // İlk kişi için
+
 window.addEventListener('DOMContentLoaded', () => {
   const item = reviews[currentItem];
   img.src = item.img;
@@ -62,22 +62,28 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 // Diğer kişilerin gösterilmesi için
+
 function showPerson(person) {
   const item = reviews[person];
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  localStorage.setItem('kisi', currentItem);
 }
 
 // Sonraki kişi butonu
+
 nextBtn.addEventListener('click', () => {
   currentItem++;
   if (currentItem > reviews.length - 1) {
     currentItem = 0
   }
   showPerson(currentItem)
+
 })
+
+// Önceki kişi butonu
 
 prevBtn.addEventListener('click', () => {
   currentItem--;
@@ -88,7 +94,6 @@ prevBtn.addEventListener('click', () => {
 })
 
 // Rastgele Kişi
-randomBtn.addEventListener('click', randomPerson);
 
 function randomPerson() {
   currentItem = Math.floor(Math.random() * reviews.length);
@@ -99,51 +104,6 @@ function randomPerson() {
     prevPerson = currentItem;
   }
   showPerson(currentItem);
-}
-*/
-
-// İlk kişi
-window.addEventListener('DOMContentLoaded', () => {
-  const item = reviews[currentItem];
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
-})
-
-// Diğer Kişiler
-function showPerson(person) {
-  const item = reviews[person];
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
-}
-
-nextBtn.addEventListener('click', () => {
-  currentItem++;
-  if (currentItem > reviews.length - 1) {
-    currentItem = 0;
-  }
-  showPerson(currentItem)
-})
-
-prevBtn.addEventListener('click', () => {
-  currentItem--;
-  if (currentItem < 0) {
-    currentItem = reviews.length - 1;
-  }
-  showPerson(currentItem)
-})
-
-function randomPerson() {
-  currentItem = Math.floor(Math.random() * reviews.length);
-  if (prevPerson === currentItem) {
-    return randomPerson()
-  } else {
-    prevPerson = currentItem
-  }
-  showPerson(currentItem)
 }
 
 randomBtn.addEventListener('click', randomPerson);
