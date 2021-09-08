@@ -43,6 +43,7 @@ const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
+const id = document.querySelector(".id");
 
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
@@ -59,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  id.textContent = item.id;
 })
 
 // Diğer kişilerin gösterilmesi için
@@ -69,6 +71,7 @@ function showPerson(person) {
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  id.textContent = item.id;
   localStorage.setItem('kisi', currentItem);
 }
 
