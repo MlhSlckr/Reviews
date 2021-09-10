@@ -225,19 +225,6 @@ Reviews
   max-width: var(--fixed-width);
 }
 
-.review {
-  background: var(--clr-white);
-  padding: 1.5rem 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
-  transition: var(--transition);
-  text-align: center;
-  position: relative;
-  &:hover {
-    box-shadow: var(--dark-shadow);
-  }
-}
-
 .id {
   position: absolute;
   top: 5%;
@@ -343,5 +330,25 @@ Reviews
   &:hover {
     background: var(--clr-primary-5);
     color: var(--clr-primary-1);
+  }
+}
+
+.reviews {
+  width: 100%;
+  position: relative;
+}
+
+.review {
+  background: var(--clr-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &:hover {
+    box-shadow: var(--dark-shadow);
   }
 }
